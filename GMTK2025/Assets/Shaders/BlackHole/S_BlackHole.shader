@@ -30,7 +30,7 @@ Shader "SG_BlackHole"
             Name "Universal Forward"
             Tags
             {
-            "LightMode" = "UseColorTexture"
+            "LightMode" = "UniversalForward"
         }
 
         // Render State
@@ -2072,7 +2072,7 @@ Shader "SG_BlackHole"
                                                             Name "Universal Forward"
                                                             Tags
                                                             {
-                                                            "LightMode" = "UseColorTexture"
+                                                            "LightMode" = "UniversalForward"
                                                         }
 
                                                         // Render State
