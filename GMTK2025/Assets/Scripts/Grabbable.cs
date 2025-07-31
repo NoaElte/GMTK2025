@@ -17,8 +17,13 @@ public class Grabbable : Interactable
     [SerializeField]
     private float maxForce = 1000f;
 
+    [Header("Rotation Settings")]
+    [SerializeField]
+    private float rotationalSpeed = 50f;
+
     [Header("Debug")]
     public float minForce;
+    public float minTorque;
 
     private Rigidbody rb;
     private Transform grabPoint;
@@ -50,6 +55,7 @@ public class Grabbable : Interactable
             return;
 
         ApplyPositionSpring();
+        ApplyRotationSpring();
     }
 
     void ApplyPositionSpring()
@@ -65,6 +71,11 @@ public class Grabbable : Interactable
 
         force = Vector3.ClampMagnitude(force, maxForce);
         rb.AddForce(force, ForceMode.Acceleration);
+    }
+
+    void ApplyRotationSpring()
+    {
+        rb.MoveRotation(Quaternion.Slerp(rb.rotation, grabPoint.rotation, rotationalSpeed * Time.deltaTime));
     }
 
     private void OnCollisionEnter(Collision collision)
