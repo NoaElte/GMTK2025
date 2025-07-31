@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_BlackHole
+  m_Name: BlackHole
   m_Shader: {fileID: -6465566751694194690, guid: 638d7f8e29bd1554f9ef4efa2ccc87c8, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -102,12 +102,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_0bb6c794ceb5476bbe1601bd36eb7262: 5.9
+    - Vector1_0bb6c794ceb5476bbe1601bd36eb7262: 10.45
     - Vector1_217b7c89a9b64ce1b38991226908c73c: 3.08
     - Vector1_3dd53a4b676044a2bd29e705645a4196: 6.2
-    - Vector1_486f1fcc37a949ffb726a117eab0987a: 18.8
+    - Vector1_486f1fcc37a949ffb726a117eab0987a: 17.3
     - Vector1_54c85e7b0ab24d109b527f59c01cae7a: 4
-    - Vector1_e1206881e1244ef4a008548fa38caa6a: 12.7
+    - Vector1_e1206881e1244ef4a008548fa38caa6a: 186.54
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -135,16 +135,16 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpherePercentage: 0.319
+    - _SpherePercentage: 0.533
     - _SrcBlend: 1
     - _Surface: 0
     - _Vector1_0bb6c794ceb5476bbe1601bd36eb7262: 7.51
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_f649559c5a534a89a4820a4d0c46d676: {r: 1, g: 1, b: 1, a: 1}
+    - Color_f649559c5a534a89a4820a4d0c46d676: {r: 0.8679245, g: 0.5560342, b: 0.09474647, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
