@@ -55,7 +55,7 @@ public class MovementAnimator : MonoBehaviour
             float t = Mathf.Clamp01(traveled / totalDistance);
             float curveValue = speedCurve.Evaluate(t);
 
-            transform.position = Vector3.Slerp(startPos, endPos, curveValue);
+            transform.position = Vector3.Lerp(startPos, endPos, curveValue);
             yield return null;
         }
 

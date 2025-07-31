@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private float loopTime;
+    [SerializeField]
+    private MovementAnimator blackHoleAnimator;
 
     private float timer;
     private bool gameBeaten;
@@ -19,6 +21,8 @@ public class GameManager : MonoBehaviour
 
             timer = 0;
 
+            blackHoleAnimator.Move();
+
             while (timer < loopTime)
             {
                 timer += Time.deltaTime;
@@ -28,6 +32,8 @@ public class GameManager : MonoBehaviour
 
                 yield return null;
             }
+
+            yield return null;
 
             // restart
         }
