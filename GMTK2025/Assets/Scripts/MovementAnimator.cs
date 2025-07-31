@@ -1,0 +1,68 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Events;
+
+public class MovementAnimator : MonoBehaviour
+{
+    [SerializeField]
+    private Transform pointA;
+    [SerializeField] 
+    private Transform pointB;
+    [SerializeField]
+    private AnimationCurve speedCurve;
+    [SerializeField]
+    private float speed = 1;
+    [SerializeField]
+    private UnityEvent onMoveStart;
+    [SerializeField]
+    private UnityEvent onMoveEnd;
+
+    private bool isMoving = false;
+    private Transform currentNextPos;
+
+    private void Awake()
+    {
+        currentNextPos = pointB;
+    }
+
+    public void Move()
+    {
+        if (isMoving)
+            return;
+
+        StartCoroutine(MoveOverTime());
+    }
+
+    private IEnumerator MoveOverTime()
+    {
+        isMoving = true;
+
+        onMoveStart?.Invoke();
+
+        Vector3 startPos = transform.position;
+        Vector3 endPos = currentNextPos.position;
+
+        currentNextPos = currentNextPos == pointA ? pointB : pointA;
+
+        float totalDistance = Vector3.Distance(startPos, endPos);
+        float traveled = 0;
+
+        while (traveled < totalDistance)
+        {
+            float step = speed * Time.deltaTime;
+            traveled += step;
+
+            float t = Mathf.Clamp01(traveled / totalDistance);
+            float curveValue = speedCurve.Evaluate(t);
+
+            transform.position = Vector3.Slerp(startPos, endPos, curveValue);
+            yield return null;
+        }
+
+        transform.position = endPos;
+
+        onMoveEnd?.Invoke();
+
+        isMoving = false;
+    }
+}

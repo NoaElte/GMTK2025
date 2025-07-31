@@ -50,6 +50,8 @@ public class FirstPersonController : MonoBehaviour
     private float footStepTimer;
     [SerializeField]
     private UnityEvent onStep;
+    [SerializeField]
+    private Transform grabPoint;
 
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
@@ -60,6 +62,7 @@ public class FirstPersonController : MonoBehaviour
     private float headBobTimer;
     private Vector3 camFollowPos;
     private Vector3 lastHeadBobOffset = Vector3.zero;
+    private Grabbable currentGrabbed;
 
     void Start()
     {
@@ -85,6 +88,7 @@ public class FirstPersonController : MonoBehaviour
             FlyMovement();
         else
             GroundMovement();
+
         Interraction();
     }
 
@@ -209,6 +213,16 @@ public class FirstPersonController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
                 interactable.Interact(transform);
         }
+        else if(currentGrabbed != null)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                currentGrabbed.Drop();
+                currentGrabbed = null;
+            }
+        }
+
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -226,5 +240,11 @@ public class FirstPersonController : MonoBehaviour
     public void SetIsFlying(bool isFlying)
     {
         this.isFlying = isFlying;
+    }
+
+    public Transform GetGrabPoint(Grabbable grabbed)
+    {
+        currentGrabbed = grabbed;
+        return grabPoint;
     }
 }

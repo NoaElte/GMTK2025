@@ -38,7 +38,8 @@ public class Door : Interactable
 
     public void Close()
     {
-        animator.SetTrigger("Close");
+        if(animator != null)
+            animator.SetTrigger("Close");
         isOpen = false;
     }
 
@@ -46,19 +47,22 @@ public class Door : Interactable
     {
         if (Vector3.Distance(transform.position + transform.forward, player.position) > Vector3.Distance(transform.position - transform.forward, player.position))
         {
-            animator.SetTrigger("OpenIn");
+            if (animator != null)
+                animator.SetTrigger("OpenIn");
             isOpen = true;
         }
         else
         {
-            animator.SetTrigger("OpenOut");
+            if (animator != null)
+                animator.SetTrigger("OpenOut");
             isOpen = true;
         }
     }
 
     public void Open()
     {
-        animator.SetTrigger("OpenIn");
+        if (animator != null)
+            animator.SetTrigger("OpenIn");
         isOpen = true;
     }
 
