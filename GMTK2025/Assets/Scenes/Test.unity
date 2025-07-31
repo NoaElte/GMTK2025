@@ -136,8 +136,9 @@ GameObject:
   - component: {fileID: 12416732}
   - component: {fileID: 12416731}
   - component: {fileID: 12416730}
+  - component: {fileID: 12416734}
   m_Layer: 6
-  m_Name: Cube (9)
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,8 +187,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1539446067}
-        m_TargetAssemblyTypeName: RandomSoundEffectPlayer, Assembly-CSharp
+      - m_Target: {fileID: 12416734}
+        m_TargetAssemblyTypeName: SoundEffectPlayer, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 1
         m_Arguments:
@@ -269,6 +270,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12416728}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &12416734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12416728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adad16ea1a9b0ee4db118a34133abdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1951925143}
+  audioClip: {fileID: 8300000, guid: 9b6e17739fd06d74692d5acab0da9a25, type: 3}
+  volume: 1
 --- !u!1 &13414392
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,8 +2277,9 @@ GameObject:
   - component: {fileID: 114953735}
   - component: {fileID: 114953734}
   - component: {fileID: 114953733}
+  - component: {fileID: 114953737}
   m_Layer: 6
-  m_Name: Cube (10)
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2311,7 +2328,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1539446067}
+      - m_Target: {fileID: 114953737}
         m_TargetAssemblyTypeName: RandomSoundEffectPlayer, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 1
@@ -2394,6 +2411,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 114953731}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114953737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114953731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adad16ea1a9b0ee4db118a34133abdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1951925143}
+  audioClip: {fileID: 8300000, guid: 50d7d16bd87e04641bc050ce81690394, type: 3}
+  volume: 1
 --- !u!1 &115132402 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7215740088098632554, guid: 2f08bb6b413833b4d8aedbd7802a2c6d, type: 3}
@@ -2486,7 +2518,7 @@ Transform:
   m_GameObject: {fileID: 120210837}
   serializedVersion: 2
   m_LocalRotation: {x: -0.15719104, y: 0.5583562, z: -0.10872147, w: -0.80728495}
-  m_LocalPosition: {x: 19.74, y: 2.37, z: -0.44}
+  m_LocalPosition: {x: 0.59, y: 1.16, z: 0.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7350,8 +7382,9 @@ GameObject:
   - component: {fileID: 393556044}
   - component: {fileID: 393556043}
   - component: {fileID: 393556042}
+  - component: {fileID: 393556046}
   m_Layer: 6
-  m_Name: Cube (8)
+  m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7400,8 +7433,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1539446067}
-        m_TargetAssemblyTypeName: RandomSoundEffectPlayer, Assembly-CSharp
+      - m_Target: {fileID: 393556046}
+        m_TargetAssemblyTypeName: SoundEffectPlayer, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 1
         m_Arguments:
@@ -7483,6 +7516,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393556040}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &393556046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393556040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adad16ea1a9b0ee4db118a34133abdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1951925143}
+  audioClip: {fileID: 8300000, guid: 2a3da76af4257ae448da0dc2d7e15190, type: 3}
+  volume: 1
 --- !u!1 &394333463
 GameObject:
   m_ObjectHideFlags: 0
@@ -10198,8 +10246,9 @@ GameObject:
   - component: {fileID: 578433244}
   - component: {fileID: 578433243}
   - component: {fileID: 578433242}
+  - component: {fileID: 578433246}
   m_Layer: 6
-  m_Name: Cube (7)
+  m_Name: Enter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10248,7 +10297,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1539446067}
+      - m_Target: {fileID: 578433246}
         m_TargetAssemblyTypeName: RandomSoundEffectPlayer, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 1
@@ -10331,6 +10380,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578433240}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &578433246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578433240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adad16ea1a9b0ee4db118a34133abdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1951925143}
+  audioClip: {fileID: 8300000, guid: 5500eeb0c7498fb438d5786e4cd6beb5, type: 3}
+  volume: 1
 --- !u!1 &585316773
 GameObject:
   m_ObjectHideFlags: 0
@@ -12189,7 +12253,7 @@ Transform:
   m_GameObject: {fileID: 703069341}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.74, y: 0.97, z: -0.44}
+  m_LocalPosition: {x: 0.59, y: -0.24, z: 0.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12343,8 +12407,9 @@ GameObject:
   - component: {fileID: 719673855}
   - component: {fileID: 719673854}
   - component: {fileID: 719673853}
+  - component: {fileID: 719673857}
   m_Layer: 6
-  m_Name: Cube (16)
+  m_Name: 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12393,7 +12458,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1539446067}
+      - m_Target: {fileID: 719673857}
         m_TargetAssemblyTypeName: RandomSoundEffectPlayer, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 1
@@ -12476,6 +12541,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719673851}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &719673857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719673851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adad16ea1a9b0ee4db118a34133abdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1951925143}
+  audioClip: {fileID: 8300000, guid: c811cc0865cb8c14da65c87d8353d370, type: 3}
+  volume: 1
 --- !u!1 &721018115
 GameObject:
   m_ObjectHideFlags: 0
@@ -13812,8 +13892,9 @@ GameObject:
   - component: {fileID: 821784456}
   - component: {fileID: 821784455}
   - component: {fileID: 821784454}
+  - component: {fileID: 821784458}
   m_Layer: 6
-  m_Name: Cube (11)
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13862,7 +13943,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1539446067}
+      - m_Target: {fileID: 821784458}
         m_TargetAssemblyTypeName: RandomSoundEffectPlayer, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 1
@@ -13945,6 +14026,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821784452}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &821784458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821784452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adad16ea1a9b0ee4db118a34133abdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1951925143}
+  audioClip: {fileID: 8300000, guid: ae5cc5df5191ad24c96544ea85a4e358, type: 3}
+  volume: 1
 --- !u!1 &827176244
 GameObject:
   m_ObjectHideFlags: 0
@@ -15949,7 +16045,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.86602545, z: 0, w: 0.49999997}
-  m_LocalPosition: {x: 19.74, y: 2.37, z: -0.44}
+  m_LocalPosition: {x: 0.59, y: 1.16, z: 0.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17764,8 +17860,9 @@ GameObject:
   - component: {fileID: 1054664756}
   - component: {fileID: 1054664755}
   - component: {fileID: 1054664754}
+  - component: {fileID: 1054664758}
   m_Layer: 6
-  m_Name: Cube (6)
+  m_Name: Del
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17814,7 +17911,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1539446067}
+      - m_Target: {fileID: 1054664758}
         m_TargetAssemblyTypeName: RandomSoundEffectPlayer, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 1
@@ -17897,6 +17994,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054664752}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1054664758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054664752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adad16ea1a9b0ee4db118a34133abdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1951925143}
+  audioClip: {fileID: 8300000, guid: 3965f342268409a47b3fdaef04083705, type: 3}
+  volume: 1
 --- !u!1 &1079666567
 GameObject:
   m_ObjectHideFlags: 0
@@ -18309,8 +18421,9 @@ GameObject:
   - component: {fileID: 1099297229}
   - component: {fileID: 1099297228}
   - component: {fileID: 1099297227}
+  - component: {fileID: 1099297231}
   m_Layer: 6
-  m_Name: Cube (15)
+  m_Name: 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18359,7 +18472,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1539446067}
+      - m_Target: {fileID: 1099297231}
         m_TargetAssemblyTypeName: RandomSoundEffectPlayer, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 1
@@ -18442,6 +18555,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099297225}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1099297231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099297225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adad16ea1a9b0ee4db118a34133abdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1951925143}
+  audioClip: {fileID: 8300000, guid: e0a1e877dc91b4e4c8c4a2d867d3d878, type: 3}
+  volume: 1
 --- !u!1 &1102878086
 GameObject:
   m_ObjectHideFlags: 0
@@ -21126,8 +21254,9 @@ GameObject:
   - component: {fileID: 1278556619}
   - component: {fileID: 1278556618}
   - component: {fileID: 1278556617}
+  - component: {fileID: 1278556621}
   m_Layer: 6
-  m_Name: Cube (13)
+  m_Name: 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21176,7 +21305,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1539446067}
+      - m_Target: {fileID: 1278556621}
         m_TargetAssemblyTypeName: RandomSoundEffectPlayer, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 1
@@ -21259,6 +21388,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278556615}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1278556621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278556615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adad16ea1a9b0ee4db118a34133abdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1951925143}
+  audioClip: {fileID: 8300000, guid: e111447f7d2e9d9418791b0b0828a1f8, type: 3}
+  volume: 1
 --- !u!1 &1278836229
 GameObject:
   m_ObjectHideFlags: 0
@@ -21590,8 +21734,9 @@ GameObject:
   - component: {fileID: 1285528383}
   - component: {fileID: 1285528382}
   - component: {fileID: 1285528381}
+  - component: {fileID: 1285528385}
   m_Layer: 6
-  m_Name: Cube (12)
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21640,7 +21785,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1539446067}
+      - m_Target: {fileID: 1285528385}
         m_TargetAssemblyTypeName: RandomSoundEffectPlayer, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 1
@@ -21723,6 +21868,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285528379}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1285528385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285528379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adad16ea1a9b0ee4db118a34133abdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1951925143}
+  audioClip: {fileID: 8300000, guid: 5df6cb662e700c540b0bbadcf1a4f5f9, type: 3}
+  volume: 1
 --- !u!1 &1312186208
 GameObject:
   m_ObjectHideFlags: 0
@@ -25248,7 +25408,6 @@ GameObject:
   - component: {fileID: 1539446065}
   - component: {fileID: 1539446064}
   - component: {fileID: 1539446063}
-  - component: {fileID: 1539446067}
   m_Layer: 0
   m_Name: Numlock
   m_TagString: Untagged
@@ -25269,18 +25428,18 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1054664753}
-  - {fileID: 578433241}
-  - {fileID: 1285528380}
-  - {fileID: 1278556616}
-  - {fileID: 2144104130}
-  - {fileID: 1099297226}
-  - {fileID: 719673852}
-  - {fileID: 2082077294}
   - {fileID: 393556041}
   - {fileID: 12416729}
-  - {fileID: 114953732}
   - {fileID: 821784453}
+  - {fileID: 114953732}
+  - {fileID: 1285528380}
+  - {fileID: 2144104130}
+  - {fileID: 1278556616}
+  - {fileID: 1099297226}
+  - {fileID: 2082077294}
+  - {fileID: 719673852}
+  - {fileID: 578433241}
+  - {fileID: 1054664753}
   - {fileID: 1951925142}
   m_Father: {fileID: 431178411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25312,6 +25471,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  audioSource: {fileID: 1951925143}
+  correctAudioClip: {fileID: 8300000, guid: 3258813d90167c849853b2baab37e9c9, type: 3}
+  incorrectAudioClip: {fileID: 8300000, guid: 8e19eb0dc7952414b97f219caf6f67fb, type: 3}
+  volume: 1
 --- !u!65 &1539446064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25383,21 +25546,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539446061}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1539446067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539446061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87db5fbbe1f40664c88b6b7ab30b4425, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 1951925143}
-  audioClips: []
-  volume: 1
 --- !u!1 &1539578808
 GameObject:
   m_ObjectHideFlags: 0
@@ -30605,7 +30753,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -30614,7 +30762,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 3.77131
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -32181,8 +32329,9 @@ GameObject:
   - component: {fileID: 2082077297}
   - component: {fileID: 2082077296}
   - component: {fileID: 2082077295}
+  - component: {fileID: 2082077299}
   m_Layer: 6
-  m_Name: Cube (17)
+  m_Name: 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32231,7 +32380,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1539446067}
+      - m_Target: {fileID: 2082077299}
         m_TargetAssemblyTypeName: RandomSoundEffectPlayer, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 1
@@ -32314,6 +32463,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082077293}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2082077299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082077293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adad16ea1a9b0ee4db118a34133abdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1951925143}
+  audioClip: {fileID: 8300000, guid: f49564e275864b645961fc54034856fb, type: 3}
+  volume: 1
 --- !u!1 &2083459072
 GameObject:
   m_ObjectHideFlags: 0
@@ -32812,8 +32976,9 @@ GameObject:
   - component: {fileID: 2144104133}
   - component: {fileID: 2144104132}
   - component: {fileID: 2144104131}
+  - component: {fileID: 2144104135}
   m_Layer: 6
-  m_Name: Cube (14)
+  m_Name: 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32862,7 +33027,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1539446067}
+      - m_Target: {fileID: 2144104135}
         m_TargetAssemblyTypeName: RandomSoundEffectPlayer, Assembly-CSharp
         m_MethodName: PlaySoundEffect
         m_Mode: 1
@@ -32945,6 +33110,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144104129}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2144104135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144104129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adad16ea1a9b0ee4db118a34133abdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1951925143}
+  audioClip: {fileID: 8300000, guid: 4a8dfef80f6c6854896048c796c36602, type: 3}
+  volume: 1
 --- !u!23 &12043750542813498
 MeshRenderer:
   m_ObjectHideFlags: 0

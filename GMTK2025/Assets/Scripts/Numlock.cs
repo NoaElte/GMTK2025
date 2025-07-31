@@ -2,12 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public class Numlock : MonoBehaviour
 {
     public List<int> Code = new List<int>();
 
     public UnityEvent OnCorrectEnter;
+
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip correctAudioClip;
+    [SerializeField]
+    private AudioClip incorrectAudioClip;
+    [SerializeField]
+    private float volume = 1.0f;
 
     private List<int> nums;
 
@@ -29,10 +39,14 @@ public class Numlock : MonoBehaviour
     public void Enter()
     {
         if (CheckCode())
+        {
             OnCorrectEnter.Invoke();
+            audioSource.PlayOneShot(correctAudioClip, volume);
+        }
         else
         {
             nums.Clear();
+            audioSource.PlayOneShot(incorrectAudioClip, volume);
         }
     }
 
