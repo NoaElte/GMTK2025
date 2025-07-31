@@ -94,6 +94,8 @@ public class FirstPersonController : MonoBehaviour
 
     public void SetAllowedToMove(bool allowedToMove) => this.allowedToMove = allowedToMove;
 
+    public void SetCanMove(bool canMove) => this.canMove = canMove;
+
     private void GroundMovement()
     {
         // We are grounded, so recalculate move direction based on axes
