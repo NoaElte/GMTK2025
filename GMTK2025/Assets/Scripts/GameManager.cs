@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
     [SerializeField]
     private float loopTime;
     [SerializeField]
@@ -10,6 +12,12 @@ public class GameManager : MonoBehaviour
 
     private float timer;
     private bool gameBeaten;
+
+    private void Awake()
+    {
+        Instance = this;
+        DontDestroyOnLoad(this);
+    }
 
     private IEnumerator Start()
     {

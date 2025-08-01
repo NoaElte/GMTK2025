@@ -65,4 +65,11 @@ public class MovementAnimator : MonoBehaviour
 
         isMoving = false;
     }
+
+    public void ResetPosition()
+    {
+        transform.position = pointA.position;
+
+        currentNextPos = pointB;
+    }
 }
