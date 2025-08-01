@@ -1,5 +1,3 @@
-using Cinemachine;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -63,17 +61,32 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 camFollowPos;
     private Vector3 lastHeadBobOffset = Vector3.zero;
     private Grabbable currentGrabbed;
+    private Vector3 originalPosition;
+    private Quaternion originalRotation;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         camFollowPos = camFollow.localPosition;
 
-        if(lockCursor )
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
+
+        if (lockCursor )
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+    }
+
+    private void OnEnable()
+    {
+        GameManager.OnReset += ResetPosition;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnReset -= ResetPosition;
     }
 
     void Update()
@@ -248,5 +261,10 @@ public class FirstPersonController : MonoBehaviour
     {
         currentGrabbed = grabbed;
         return grabPoint;
+    }
+
+    private void ResetPosition()
+    {
+        transform.SetPositionAndRotation(originalPosition, originalRotation);
     }
 }

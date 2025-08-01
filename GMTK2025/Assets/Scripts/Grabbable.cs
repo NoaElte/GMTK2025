@@ -28,9 +28,25 @@ public class Grabbable : Interactable
     private Rigidbody rb;
     private Transform grabPoint;
 
+    private Vector3 originalPosition;
+    private Quaternion originalRotation;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
+    }
+
+    private void OnEnable()
+    {
+        GameManager.OnReset += ResetPosition;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnReset -= ResetPosition;
     }
 
     public override void Interact(Transform player)
@@ -87,5 +103,10 @@ public class Grabbable : Interactable
             canInteractWith.Interact(transform);
             onInteract.Invoke();
         }
+    }
+
+    private void ResetPosition()
+    {
+        transform.SetPositionAndRotation(originalPosition, originalRotation);
     }
 }

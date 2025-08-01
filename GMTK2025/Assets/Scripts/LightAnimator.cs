@@ -26,6 +26,16 @@ public class LightAnimator : MonoBehaviour
             Animate();
     }
 
+    private void OnEnable()
+    {
+        GameManager.OnReset += ResetIntensity;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnReset -= ResetIntensity;
+    }
+
     public void Animate()
     {
         StartCoroutine(AnimateOverTime());
@@ -47,5 +57,11 @@ public class LightAnimator : MonoBehaviour
         }
 
         isAnimationGoing = false;
+    }
+
+    private void ResetIntensity()
+    {
+        float curveValue = animationCurve.Evaluate(0);
+        light.intensity = curveValue;
     }
 }

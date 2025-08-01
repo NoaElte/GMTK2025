@@ -25,6 +25,16 @@ public class MovementAnimator : MonoBehaviour
         currentNextPos = pointB;
     }
 
+    private void OnEnable()
+    {
+        GameManager.OnReset += ResetPosition;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnReset -= ResetPosition;
+    }
+
     public void Move()
     {
         if (isMoving)
