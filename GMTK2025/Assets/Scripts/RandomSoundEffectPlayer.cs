@@ -12,14 +12,13 @@ public class RandomSoundEffectPlayer : MonoBehaviour
 
     public void PlaySoundEffect()
     {
-        Debug.Log("step");
-
         if (audioClips == null || audioClips.Count == 0 || audioSource == null)
             return;
 
         // Pick a random footstep sound
         int index = Random.Range(0, audioClips.Count);
         AudioClip clip = audioClips[index];
+        Debug.Log(clip.name);
 
         audioSource.PlayOneShot(clip, volume);
     }

@@ -46,7 +46,7 @@ public class FirstPersonController : MonoBehaviour
     private bool lockCursor;
     [SerializeField]
     private LayerMask FlyZoneMask;
-    [SerializeField, Range(-1, 0)]
+    [SerializeField, Range(-1, 1)]
     private float footStepTimer;
     [SerializeField]
     private UnityEvent onStep;
