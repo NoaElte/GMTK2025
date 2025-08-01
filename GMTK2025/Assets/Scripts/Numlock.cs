@@ -26,6 +26,16 @@ public class Numlock : MonoBehaviour
         nums = new List<int>();
     }
 
+    private void OnEnable()
+    {
+        GameManager.OnReset += ResetNums;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnReset -= ResetNums;
+    }
+
     public void AddNum(int num)
     {
         nums.Add(num);
@@ -45,7 +55,7 @@ public class Numlock : MonoBehaviour
         }
         else
         {
-            nums.Clear();
+            ResetNums();
             audioSource.PlayOneShot(incorrectAudioClip, volume);
         }
     }
@@ -64,8 +74,8 @@ public class Numlock : MonoBehaviour
         return true;
     }
 
-    private void UpdateVisuals()
+    private void ResetNums()
     {
-
+        nums.Clear();
     }
 }

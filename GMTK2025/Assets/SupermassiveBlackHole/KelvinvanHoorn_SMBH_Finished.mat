@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DiscInnerRadius: 0.411
+    - _DiscInnerRadius: 0.268
     - _DiscOuterRadius: 1
     - _DiscSpeed: 2
     - _DiscWidth: 0.01
@@ -37,7 +37,7 @@ Material:
     - _GConst: 1.85
     - _HueRadius: 0.662
     - _HueShiftFactor: -0.01
-    - _SSRadius: 0
+    - _SSRadius: 0.01
     - _StepSize: 0.183
     - _Steps: 256
     m_Colors:

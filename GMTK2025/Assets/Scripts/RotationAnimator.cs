@@ -27,6 +27,22 @@ public class RotateByAngle : MonoBehaviour
     private bool lastRotateWasClockWise = false;
 
     private bool isRotating = false;
+    private Quaternion originalRotation;
+
+    private void Awake()
+    {
+        originalRotation = transform.rotation;
+    }
+
+    private void OnEnable()
+    {
+        GameManager.OnReset += ResetRotation;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnReset -= ResetRotation;
+    }
 
     public void Rotate()
     {
@@ -97,5 +113,10 @@ public class RotateByAngle : MonoBehaviour
         onRotateEnd?.Invoke();
 
         isRotating = false;
+    }
+
+    private void ResetRotation()
+    {
+        transform.rotation = originalRotation;
     }
 }

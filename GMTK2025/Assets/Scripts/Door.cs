@@ -10,13 +10,26 @@ public class Door : Interactable
     [SerializeField]
     private bool isOpenByDefault;
 
+    private bool isLockedByDefault;
+
     public override string UseText => isOpen ? "Close" : "Open" + (isLocked ? " (Locked)" : "");
 
     void Start()
     {
+        isLockedByDefault = isLocked;
         animator = GetComponent<Animator>();
         if (isOpenByDefault)
             Open();
+    }
+
+    private void OnEnable()
+    {
+        GameManager.OnReset += ResetDoor;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnReset -= ResetDoor;
     }
 
     public override void Interact(Transform player)
@@ -74,5 +87,15 @@ public class Door : Interactable
     public void Lock()
     {
         isLocked = true;
+    }
+
+    private void ResetDoor()
+    {
+        isLocked = isLockedByDefault;
+
+        if (isOpenByDefault && !isOpen)
+            Open();
+        else if (!isOpenByDefault && isOpen)
+            Close();
     }
 }
