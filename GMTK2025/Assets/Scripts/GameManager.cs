@@ -20,10 +20,19 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private MovementAnimator blackHoleAnimator;
 
+    [Header("Extras")]
+    [SerializeField]
+    private int collectibleCount;
+    [SerializeField]
+    private AchievementSO collectibleAchievement;
+    [SerializeField]
+    private Achievement achievement;
+
     public delegate void ResetEvent();
     public static event ResetEvent OnReset;
 
     private bool gameBeaten;
+    private int collectiblesCollected;
 
     private void Awake()
     {
@@ -80,5 +89,13 @@ public class GameManager : MonoBehaviour
     public void BeatGame()
     {
         gameBeaten = true;
+    }
+
+    public void OnCollectibleCollected()
+    {
+        collectiblesCollected++;
+
+        if (collectiblesCollected >= collectibleCount)
+            Achievement.Instance.AchievemnetGet(collectibleAchievement);
     }
 }

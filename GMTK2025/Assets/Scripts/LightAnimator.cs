@@ -63,5 +63,8 @@ public class LightAnimator : MonoBehaviour
     {
         float curveValue = animationCurve.Evaluate(0);
         light.intensity = curveValue;
+
+        if (startOnAwake)
+            Animate();
     }
 }
