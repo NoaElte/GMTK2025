@@ -6,6 +6,8 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public AudioMixer audioMixer;
+    public AudioSource soundtrack;
+    public AudioSource blackholeSound;
 
     void Update()
     {
@@ -27,6 +29,9 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        soundtrack.UnPause();
+        blackholeSound.UnPause();
+
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -37,6 +42,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        soundtrack.Pause();
+        blackholeSound.Pause();
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
