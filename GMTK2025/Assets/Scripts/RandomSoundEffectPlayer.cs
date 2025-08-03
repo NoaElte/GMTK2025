@@ -18,7 +18,6 @@ public class RandomSoundEffectPlayer : MonoBehaviour
         // Pick a random footstep sound
         int index = Random.Range(0, audioClips.Count);
         AudioClip clip = audioClips[index];
-        Debug.Log(clip.name);
 
         audioSource.PlayOneShot(clip, volume);
     }

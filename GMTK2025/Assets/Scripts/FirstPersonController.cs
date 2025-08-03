@@ -34,8 +34,8 @@ public class FirstPersonController : MonoBehaviour
     private float walkBobFrequency = 1.25f;
     [SerializeField]
     private float runBobFrequency = 1.75f;
-    [SerializeField]
-    private GameObject interactIndicator;
+    //[SerializeField]
+    //private GameObject interactIndicator;
     [SerializeField]
     private TMP_Text interactText;
     [SerializeField]
@@ -54,7 +54,7 @@ public class FirstPersonController : MonoBehaviour
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
-    private bool canMove = true;
+    private bool canMove = false;
     private bool allowedToMove = true;
     private bool isFlying = false;
     private float headBobTimer;
@@ -208,7 +208,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void Interraction()
     {
-        interactIndicator.SetActive(false);
+        //interactIndicator.SetActive(false);
         interactText.text = "";
         RaycastHit hit;
         if(Physics.SphereCast(playerCamera.transform.position, interactionSphereRadius, playerCamera.transform.TransformDirection(Vector3.forward), out hit, maxInteractionDistance, interactableMask))
@@ -222,7 +222,7 @@ public class FirstPersonController : MonoBehaviour
                     return;
             }
 
-            interactIndicator.SetActive(true);
+            //interactIndicator.SetActive(true);
             interactText.text = interactable.UseText;
 
             if (Input.GetKeyDown(KeyCode.E))
@@ -269,6 +269,8 @@ public class FirstPersonController : MonoBehaviour
         transform.SetPositionAndRotation(originalPosition, originalRotation);
 
         isFlying = false;
+        canMove = true;
+        allowedToMove = true;
 
         if (currentGrabbed != null)
             currentGrabbed.Drop();

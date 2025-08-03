@@ -43,6 +43,9 @@ public class Numlock : MonoBehaviour
 
     public void BackSpace()
     {
+        if (nums.Count <= 0)
+            return;
+
         nums.RemoveAt(nums.Count - 1);
     }
 

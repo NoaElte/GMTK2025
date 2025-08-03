@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -12,33 +13,61 @@ public class Achievement : MonoBehaviour
     private MovementAnimator movementAnimator;
     [SerializeField]
     private float showTime;
+    [SerializeField]
+    private int achievementsCount;
 
-    [HideInInspector]
-    public bool IsFinished;
+    private List<AchievementSO> achievementList;
+    private Dictionary<AchievementSO, bool> achievementCompletions;
+
+    public int AchievementsCount => achievementsCount;
+
+    public int AchievementsGot => achievementCompletions.Count;
 
     private void Awake()
     {
         Instance = this;
+
+        achievementList = new List<AchievementSO>();
+        achievementCompletions = new Dictionary<AchievementSO, bool>();
+    }
+
+    private IEnumerator Start()
+    {
+        int i = 0;
+
+        while (true)
+        {
+
+
+            while (achievementList.Count > i)
+            {
+                var achievement = achievementList[i];
+
+                i++;
+
+                nameText.text = achievement.name;
+
+                movementAnimator.Move();
+
+                yield return new WaitForSeconds(1f);
+
+                yield return new WaitForSeconds(showTime);
+
+                movementAnimator.Move();
+
+                yield return new WaitForSeconds(1f);
+            }
+
+            yield return null;
+        }
     }
 
     public void AchievemnetGet(AchievementSO achievement)
     {
-        if (IsFinished)
+        if (achievementCompletions.ContainsKey(achievement))
             return;
 
-        nameText.text = achievement.name;
-
-        IsFinished = true;
-
-        StartCoroutine(ShowAchievement());
-    }
-
-    private IEnumerator ShowAchievement()
-    {
-        movementAnimator.Move();
-
-        yield return new WaitForSeconds(showTime);
-
-        movementAnimator.Move();
+        achievementList.Add(achievement);
+        achievementCompletions.Add(achievement, true);
     }
 }

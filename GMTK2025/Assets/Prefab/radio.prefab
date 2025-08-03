@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 1545272013879166349}
   - component: {fileID: 657551276148917780}
   - component: {fileID: 5068917308961877636}
+  - component: {fileID: 8004115938526321819}
+  - component: {fileID: 7018847360757492052}
+  - component: {fileID: 8922438541581178609}
   m_Layer: 0
   m_Name: radio
   m_TagString: Untagged
@@ -83,3 +86,75 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8004115938526321819
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5367158338714446677}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.27104038, y: 0.13065813, z: 0.16231573}
+  m_Center: {x: 0, y: -0.0070289006, z: -0.0006674007}
+--- !u!54 &7018847360757492052
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5367158338714446677}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &8922438541581178609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5367158338714446677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6043ad7f6a8c374c80981bb0bed6144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseInteractionText: Grab
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  collider: {fileID: 8004115938526321819}
+  canInteractWith: {fileID: 0}
+  springForce: 350
+  positionalDamping: 15
+  maxForce: 1000
+  rotationalSpeed: 150
+  minForce: 1000
+  minTorque: 1000

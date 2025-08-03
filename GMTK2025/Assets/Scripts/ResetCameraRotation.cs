@@ -11,6 +11,10 @@ public class ResetCameraRotation : MonoBehaviour
     private void Awake()
     {
         cameraPOV = GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachinePOV>();
+
+        if (cameraPOV == null)
+            return;
+
         starterHorizontalRotation = cameraPOV.m_HorizontalAxis.Value;
         starterVerticalRotation = cameraPOV.m_VerticalAxis.Value;
     }
@@ -27,6 +31,9 @@ public class ResetCameraRotation : MonoBehaviour
 
     private void ResetRotation()
     {
+        if (cameraPOV == null)
+            return;
+
         cameraPOV.m_HorizontalAxis.Value = starterHorizontalRotation;
         cameraPOV.m_VerticalAxis.Value = starterVerticalRotation;
     }

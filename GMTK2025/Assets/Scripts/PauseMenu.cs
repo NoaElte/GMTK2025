@@ -25,7 +25,8 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
+        //cannot stop the game because of music
+        //Time.timeScale = 1f;
         GameIsPaused = false;
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -35,7 +36,8 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
+        //cannot stop the game because of music
+        //Time.timeScale = 0f;
         GameIsPaused = true;
 
         Cursor.lockState = CursorLockMode.None;

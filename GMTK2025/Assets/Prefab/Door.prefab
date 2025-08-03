@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 2860325856435982772}
   - component: {fileID: 380631118081903133}
   - component: {fileID: 5426101135801121887}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: RightWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 8482158491236877599}
   - component: {fileID: 4922170327101127542}
   - component: {fileID: 8855741679812086805}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: LeftWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,6 +469,7 @@ GameObject:
   - component: {fileID: 6784813159671416906}
   - component: {fileID: 5698533302154540692}
   - component: {fileID: 6257870175559677701}
+  - component: {fileID: 647268577562884998}
   m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
@@ -548,6 +549,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnOpen:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClose:
+    m_PersistentCalls:
+      m_Calls: []
   isLocked: 0
   isOpenByDefault: 0
 --- !u!114 &6257870175559677701
@@ -565,6 +572,27 @@ MonoBehaviour:
   audioSource: {fileID: 6662206077035205831}
   audioClip: {fileID: 8300000, guid: ca4890ad308ce5b4493d01441c7ec60c, type: 3}
   volume: 0.15
+--- !u!65 &647268577562884998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6244399924955968180}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.3376231, y: 2.4891825, z: 0.18992281}
+  m_Center: {x: 0, y: -0.022753716, z: 0.020096328}
 --- !u!1 &7589336004562495551
 GameObject:
   m_ObjectHideFlags: 0

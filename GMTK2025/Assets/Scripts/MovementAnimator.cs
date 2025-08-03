@@ -17,8 +17,12 @@ public class MovementAnimator : MonoBehaviour
     [SerializeField]
     private UnityEvent onMoveEnd;
 
+    [SerializeField]
+    private bool bypassReset;
+
     private bool isMoving = false;
     private Transform currentNextPos;
+    private bool reset = false;
 
     private void Awake()
     {
@@ -46,6 +50,7 @@ public class MovementAnimator : MonoBehaviour
     private IEnumerator MoveOverTime()
     {
         isMoving = true;
+        reset = false;
 
         onMoveStart?.Invoke();
 
@@ -66,17 +71,43 @@ public class MovementAnimator : MonoBehaviour
             float curveValue = speedCurve.Evaluate(t);
 
             transform.position = Vector3.Lerp(startPos, endPos, curveValue);
+
+            if (reset)
+            {
+                Debug.Log("reset");
+                Reset();
+                break;
+            }
+
             yield return null;
         }
 
-        transform.position = endPos;
+        if (!reset)
+        {
+            transform.position = endPos;
 
-        onMoveEnd?.Invoke();
+            onMoveEnd?.Invoke();
+        }
 
         isMoving = false;
     }
 
     public void ResetPosition()
+    {
+        if (bypassReset) 
+            return;
+
+        if (isMoving)
+        {
+            reset = true;
+        }
+        else
+        {
+            Reset();
+        }
+    }
+
+    public void Reset()
     {
         transform.position = pointA.position;
 

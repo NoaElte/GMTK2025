@@ -14,7 +14,6 @@ Material:
   m_ValidKeywords:
   - _ADDITIONAL_LIGHTS
   - _ADDITIONAL_LIGHT_SHADOWS
-  - _ALPHATEST_ON
   - _MAIN_LIGHT_SHADOWS
   - _MAIN_LIGHT_SHADOWS_CASCADE
   - _SHADOWS_SOFT
@@ -52,7 +51,7 @@ Material:
     m_Floats:
     - _ADDITIONAL_LIGHTS: 1
     - _ADDITIONAL_LIGHT_SHADOWS: 1
-    - _AlphaClip: 1
+    - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
     - _CastShadows: 1
@@ -72,6 +71,7 @@ Material:
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
+    - _additional_alpha: 0
     m_Colors:
     - _Color: {r: 0.76699996, g: 0.76699996, b: 0.76699996, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}

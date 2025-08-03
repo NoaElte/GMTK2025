@@ -26,6 +26,7 @@ Shader "KelvinvanHoorn/SMBH_Finished"
             HLSLPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
+			#pragma target 2.0
 
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareOpaqueTexture.hlsl"       
@@ -322,7 +323,7 @@ Shader "KelvinvanHoorn/SMBH_Finished"
 				return newColor;
 			}
 
-			float4 frag (v2f IN) : SV_Target
+			float4 frag (v2f IN) : COLOR
 			{
 				// Initial ray information
 				float3 rayOrigin = _WorldSpaceCameraPos;

@@ -41,5 +41,5 @@ Material:
     - _StepSize: 0.183
     - _Steps: 256
     m_Colors:
-    - _DiscColor: {r: 3.9533494, g: 2.1105735, b: 0.52974886, a: 0.38431373}
+    - _DiscColor: {r: 28.831999, g: 15.397192, b: 3.924774, a: 0.38431373}
   m_BuildTextureStacks: []

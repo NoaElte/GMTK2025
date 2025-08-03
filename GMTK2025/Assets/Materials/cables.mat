@@ -70,8 +70,9 @@ Material:
     - _ZTest: 4
     - _ZWrite: 1
     - _ZWriteControl: 0
+    - _additional_alpha: 0
     m_Colors:
-    - _Color: {r: 0.6431373, g: 0.25468233, b: 0.25468233, a: 0}
+    - _Color: {r: 0.038, g: 0.012881999, b: 0.012881999, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Tiling: {r: 5, g: 5, b: 0, a: 0}
   m_BuildTextureStacks: []

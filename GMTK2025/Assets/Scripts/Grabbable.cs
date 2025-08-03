@@ -54,7 +54,6 @@ public class Grabbable : Interactable
     {
         grabPoint = player.GetComponent<FirstPersonController>().GetGrabPoint(this);
         rb.useGravity = false;
-        transform.SetPositionAndRotation(grabPoint.position, grabPoint.rotation);
         grabber = player;
     }
 
@@ -97,7 +96,18 @@ public class Grabbable : Interactable
     {
         if(collision == null || canInteractWith == null) return;
 
-        if(collision.gameObject == canInteractWith.gameObject)
+        if (collision.gameObject == canInteractWith.gameObject)
+        {
+            canInteractWith.Interact(grabber);
+            onInteract.Invoke();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other == null || canInteractWith == null) return;
+
+        if (other.gameObject == canInteractWith.gameObject)
         {
             canInteractWith.Interact(grabber);
             onInteract.Invoke();
