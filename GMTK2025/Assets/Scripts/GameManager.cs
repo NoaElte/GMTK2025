@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float textTime;
     [SerializeField]
-    private GameObject storyBackGround;
+    private Image storyBackGround;
     [SerializeField]
     private List<GameObject> storyTexts;
 
@@ -19,6 +20,12 @@ public class GameManager : MonoBehaviour
     private float loopTime;
     [SerializeField]
     private MovementAnimator blackHoleAnimator;
+    [SerializeField]
+    private float resetWaitTime;
+    [SerializeField]
+    private float backgroundFadeoutTime;
+    [SerializeField]
+    private AnimationCurve backgroundFadeoutAnimationCurve;
 
     [Header("Extras")]
     [SerializeField]
@@ -44,6 +51,10 @@ public class GameManager : MonoBehaviour
     {
         // first time stuff
 
+        storyBackGround.color = Color.black;
+
+        yield return new WaitForSeconds(3f);
+
         int textIndex = 0;
 
         while (textIndex < storyTexts.Count && storyTexts != null)
@@ -54,14 +65,32 @@ public class GameManager : MonoBehaviour
 
             textIndex++;
 
-            yield return null;
+            yield return new WaitForSeconds(textTime);
         }
 
         storyTexts.ForEach(t => t.SetActive(false));
 
+        yield return new WaitForSeconds(textTime);
+
         while (!gameBeaten)
         {
             // loop stuff
+
+            float backgroundFadeoutTimer = 0;
+
+            while (backgroundFadeoutTimer <= backgroundFadeoutTime)
+            {
+                Color color = storyBackGround.color;
+
+                float a = Mathf.Lerp(1, 0, backgroundFadeoutAnimationCurve.Evaluate(backgroundFadeoutTimer / backgroundFadeoutTime));
+
+                color.a = a;
+                storyBackGround.color = color;
+
+                backgroundFadeoutTimer += Time.deltaTime;
+
+                yield return null;
+            }
 
             float timer = 0;
 
@@ -81,6 +110,10 @@ public class GameManager : MonoBehaviour
                 break;
 
             yield return null;
+
+            storyBackGround.color = Color.black;
+
+            yield return new WaitForSeconds(resetWaitTime);
 
             OnReset();
         }

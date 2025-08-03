@@ -1,9 +1,15 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Door : Interactable
 {
     private Animator animator;
     private bool isOpen = false;
+
+    [SerializeField]
+    private UnityEvent OnOpen;
+    [SerializeField] 
+    private UnityEvent OnClose;
 
     [SerializeField]
     private bool isLocked;
@@ -54,6 +60,7 @@ public class Door : Interactable
         if(animator != null)
             animator.SetTrigger("Close");
         isOpen = false;
+        OnClose?.Invoke();
     }
 
     public void Open(Transform player)
@@ -62,20 +69,23 @@ public class Door : Interactable
         {
             if (animator != null)
                 animator.SetTrigger("OpenIn");
-            isOpen = true;
         }
         else
         {
             if (animator != null)
                 animator.SetTrigger("OpenOut");
-            isOpen = true;
         }
+
+        OnOpen?.Invoke();
+        isOpen = true;
     }
 
     public void Open()
     {
         if (animator != null)
             animator.SetTrigger("OpenIn");
+
+        OnOpen?.Invoke();
         isOpen = true;
     }
 

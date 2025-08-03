@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Pong
-  m_Shader: {fileID: -6465566751694194690, guid: 122ae06941bb32d4f9cad13ea12c518c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: d562b3ae8f7aa3348811ac1ae63de7ea, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -65,7 +65,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexture:
-        m_Texture: {fileID: 8400000, guid: 9299c12e7c4ee5541a80dfec3d013d47, type: 2}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:

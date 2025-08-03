@@ -27,6 +27,7 @@ public class Grabbable : Interactable
 
     private Rigidbody rb;
     private Transform grabPoint;
+    private Transform grabber;
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
@@ -51,18 +52,16 @@ public class Grabbable : Interactable
 
     public override void Interact(Transform player)
     {
-        //base.Interact(player);
         grabPoint = player.GetComponent<FirstPersonController>().GetGrabPoint(this);
         rb.useGravity = false;
         transform.SetPositionAndRotation(grabPoint.position, grabPoint.rotation);
-        //collider.isTrigger = true;
+        grabber = player;
     }
 
     public void Drop()
     {
         grabPoint = null;
         rb.useGravity = true;
-        //collider.isTrigger = false;
     }
 
     private void FixedUpdate()
@@ -100,7 +99,7 @@ public class Grabbable : Interactable
 
         if(collision.gameObject == canInteractWith.gameObject)
         {
-            canInteractWith.Interact(transform);
+            canInteractWith.Interact(grabber);
             onInteract.Invoke();
         }
     }

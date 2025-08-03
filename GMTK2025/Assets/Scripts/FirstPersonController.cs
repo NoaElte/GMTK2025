@@ -81,12 +81,12 @@ public class FirstPersonController : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.OnReset += ResetPosition;
+        GameManager.OnReset += ResetPlayer;
     }
 
     private void OnDisable()
     {
-        GameManager.OnReset -= ResetPosition;
+        GameManager.OnReset -= ResetPlayer;
     }
 
     void Update()
@@ -263,8 +263,16 @@ public class FirstPersonController : MonoBehaviour
         return grabPoint;
     }
 
-    private void ResetPosition()
+    private void ResetPlayer()
     {
+        characterController.enabled = false;
         transform.SetPositionAndRotation(originalPosition, originalRotation);
+
+        isFlying = false;
+
+        if (currentGrabbed != null)
+            currentGrabbed.Drop();
+
+        characterController.enabled = true;
     }
 }
